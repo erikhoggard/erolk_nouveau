@@ -1,0 +1,10 @@
+baseURL = 'https://erolk.com'
+languageCode = 'en-us'
+title = 'The World'
+theme = 'shibui'
+#theme = 'photophobia'
+
+[params]
+    author = "Erik Hoggard"
+    email = "erikhoggard@gmail.com"
+
