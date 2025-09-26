@@ -4,3 +4,15 @@
 [submodule "themes/photophobia"]
 	path = themes/photophobia
 	url = https://github.com/setsevireon/photophobia.git
+[submodule "themes/hugo-bearblog"]
+	path = themes/hugo-bearblog
+	url = https://github.com/janraasch/hugo-bearblog.git
+[submodule "themes/chicago7"]
+	path = themes/chicago7
+	url = https://github.com/akopdev/hugo-theme-chicago7.git
+[submodule "hugo-theme-console"]
+	path = hugo-theme-console
+	url = https://github.com/mrmierzejewski/hugo-theme-console.git
+[submodule "themes/console"]
+	path = themes/console
+	url = https://github.com/mrmierzejewski/hugo-theme-console.git

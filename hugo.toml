@@ -1,6 +1,9 @@
 baseURL = 'https://erolk.com'
 languageCode = 'en-us'
 title = 'The World'
+#theme = 'console'
+#theme = 'chicago7'
+#theme = 'hugo-bearblog'
 theme = 'shibui'
 #theme = 'photophobia'
 
@@ -8,3 +11,14 @@ theme = 'shibui'
     author = "Erik Hoggard"
     email = "erikhoggard@gmail.com"
 
+[[params.navlinks]]
+name = "About"
+url = "/about/"
+
+[[params.navlinks]]
+name = "Posts"
+url = "/posts/"
+
+[[params.navlinks]]
+name = "Photos"
+url = "/photos/"
