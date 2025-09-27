@@ -1,0 +1,9 @@
+<a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer" class="block my-8">
+  <img
+    src="{{ .Destination | safeURL }}"
+    alt="{{ .Text }}"
+    {{ with .Title }}title="{{ . }}"{{ end }}
+    loading="lazy"
+  />
+</a>
+

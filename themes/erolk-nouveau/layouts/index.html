@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 mt-8">
+
+    {{/* Get the most recent post from the 'posts' section */}}
+    {{ $latestPost := first 1 (where .Site.RegularPages.ByDate.Reverse "Section" "posts") }}
+
+    {{/* Loop through the result (it will only be one post) and display it like a single page */}}
+    {{ range $latestPost }}
+    <article class="post">
+        <div class="text-gray-400 mb-4">
+            <span>{{ .Date.Format "01/02/06" }}</span>
+        </div>
+        <div class="prose lg:prose-xl max-w-none">
+            {{ .Content }}
+        </div>
+    </article>
+    {{ end }}
+
+    <hr />
+    <p><a href="/posts">old news</a></p>
+
+</div>
+{{ end }}

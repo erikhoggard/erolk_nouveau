@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 mt-8">
+  <article class="post">
+    <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+    <div class="text-gray-600 mb-4">
+      <span>{{ .Date.Format "January 2, 2006" }}</span>
+    </div>
+    <!-- The 'prose' class below is what applies Tailwind's typography styles to your Markdown content. -->
+    <div class="prose lg:prose-xl max-w-none">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+{{ end }}

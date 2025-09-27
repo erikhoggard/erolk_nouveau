@@ -1,105 +1,56 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en-us">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Lol | The World</title>
-<link rel="apple-touch-icon" sizes="57x57" href="/favicon_io/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon_io/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon_io/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon_io/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon_io/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon_io/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon_io/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon_io/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/favicon_io/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon_io/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/favicon_io/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon_io/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-
-    <link rel="stylesheet" href="/css/main.css">
-
-
-      <script src="/js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lol</title>
+  <script>
+    
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <header>
-    <header>
-  <nav class="path-nav">
-    <ol>
-      
-  
-    
-  
-    
-  
-  <li>
-    /
-    <a href="/">The World</a>
-    /
-  </li>
-
-  
-  <li>
-    
-    <a href="/posts/">Posts</a>
-    /
-  </li>
-
-  
-  <li class="current">
-    
-    <a href="/posts/lol/">Lol</a>
-    
-  </li>
-
-    </ol>
-  </nav>
+<header class="flex justify-between items-center mb-8">
+  <a href="http://localhost:1313/" class="text-xl font-bold">
+    The World
+  </a>
+  <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+  </button>
 </header>
 
-
-
-  </header>
-  <main>
-    
-  <h1>Lol</h1>
+<main>
   
-
-
-  
-  
-  
-  
-
-  <p>milk</p>
-
-  <time datetime="2025-09-26">2025-09-26&nbsp;</time>
-
-
-  
-    <div class="terminal-nav">
-      <div class="back-nav">
-        <a href="../" class="back-link">../</a>
-      </div>
+<div class="container mx-auto px-4 mt-8">
+  <article class="post">
+    <h1 class="text-4xl font-bold mb-4">Lol</h1>
+    <div class="text-gray-600 mb-4">
+      <span>September 26, 2025</span>
     </div>
-  
+    
+    <div class="prose lg:prose-xl max-w-none">
+      <h1 id="this-is-a-heading-1">This is a Heading 1</h1>
+<p>This is a regular paragraph of text.</p>
+<h2 id="this-is-a-subheading">This is a Subheading</h2>
+<p>Here is some text with <strong>bold words</strong> and <em>italic words</em>.</p>
+<ul>
+<li>This is a list item.</li>
+<li>This is another list item.</li>
+</ul>
 
-  </main>
-  <footer>
-    <p>
-  &copy; Copyright 2025 &middot;
-  <a href="https://github.com/ntk148v/shibui">shibui</a>
-</p>
+    </div>
+  </article>
+</div>
 
-  </footer>
+</main>
+
+<script src="/js/main.js" defer></script>
 </body>
 </html>

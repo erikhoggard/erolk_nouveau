@@ -1,94 +1,99 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr">
+<html lang="en-us">
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Posts | The World</title>
-<link rel="apple-touch-icon" sizes="57x57" href="/favicon_io/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon_io/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon_io/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon_io/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon_io/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon_io/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon_io/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon_io/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/favicon_io/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon_io/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-<link rel="manifest" href="/favicon_io/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/favicon_io/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-
-    <link rel="stylesheet" href="/css/main.css">
-
-
-      <script src="/js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Posts</title>
+  <script>
+    
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <header>
-    <header>
-  <nav class="path-nav">
-    <ol>
+<header class="flex justify-between items-center my-8">
+  
+  <a href="http://localhost:1313/" class="text-xl font-bold text-white hover:text-gray-300">
+    The World
+  </a>
+
+  
+  <nav>
+    <ul class="flex space-x-6">
       
-  
-    
-  
-  <li>
-    /
-    <a href="/">The World</a>
-    /
-  </li>
+      <li>
+        <a href="/posts/" class="text-gray-400 hover:text-white transition-colors">
+          Posts
+        </a>
+      </li>
+      
+      <li>
+        <a href="/photos/" class="text-gray-400 hover:text-white transition-colors">
+          Photos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/music/" class="text-gray-400 hover:text-white transition-colors">
+          Music
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="text-gray-400 hover:text-white transition-colors">
+          About
+        </a>
+      </li>
+      
+    </ul>
 
-  
-  <li class="current">
-    
-    <a href="/posts/">Posts</a>
-    
-  </li>
-
-    </ol>
   </nav>
 </header>
 
+<main>
+  
+<div class="prose prose-invert max-w-none prose-a:text-gray-400 hover:prose-a:text-gray-200">
 
+  <h1>Posts</h1>
 
-  </header>
-  <main>
+  <ul class="!list-none !p-0">
     
-    <h1>Posts</h1>
+    <li class="flex justify-between items-baseline mb-2">
+      <a href="/posts/lol/">Lol</a>
+      <span class="text-sm text-gray-500">09/26/25</span>
+    </li>
     
-    <div class="time-list">
-        <ul>
-            
-            <li>
-                <span><time datetime="2025-09-26">2025-09-26&nbsp;</time>
-</span>
-                <div><a href="/posts/lol/">Lol</a></div>
-            </li>
-            
-            <li>
-                <span><time datetime="2025-09-26">2025-09-26&nbsp;</time>
-</span>
-                <div><a href="/posts/welcome/">Welcome</a></div>
-            </li>
-            
-        </ul>
-    </div>
+    <li class="flex justify-between items-baseline mb-2">
+      <a href="/posts/welcome/">Welcome</a>
+      <span class="text-sm text-gray-500">09/26/25</span>
+    </li>
+    
+    <li class="flex justify-between items-baseline mb-2">
+      <a href="/posts/post-3/">Post 3</a>
+      <span class="text-sm text-gray-500">03/15/23</span>
+    </li>
+    
+    <li class="flex justify-between items-baseline mb-2">
+      <a href="/posts/post-2/">Post 2</a>
+      <span class="text-sm text-gray-500">02/15/23</span>
+    </li>
+    
+    <li class="flex justify-between items-baseline mb-2">
+      <a href="/posts/post-1/">Post 1</a>
+      <span class="text-sm text-gray-500">01/15/23</span>
+    </li>
+    
+  </ul>
 
-  </main>
-  <footer>
-    <p>
-  &copy; Copyright 2025 &middot;
-  Erik Hoggard
-</p>
+</div>
 
-  </footer>
+</main>
+
+<script src="/js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="prose prose-invert max-w-none prose-a:text-gray-400 hover:prose-a:text-gray-200">
+
+  <h1>{{ .Title }}</h1>
+
+  <ul class="!list-none !p-0">
+    {{ range .Pages }}
+    <li class="flex justify-between items-baseline mb-2">
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="text-sm text-gray-500">{{ .Date.Format "01/02/06" }}</span>
+    </li>
+    {{ end }}
+  </ul>
+
+</div>
+{{ end }}
+

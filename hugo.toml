@@ -3,22 +3,52 @@ languageCode = 'en-us'
 title = 'The World'
 #theme = 'console'
 #theme = 'chicago7'
-#theme = 'hugo-bearblog'
-theme = 'shibui'
-#theme = 'photophobia'
+#theme = 'shibui'
+theme = 'erolk-nouveau'
 
 [params]
     author = "Erik Hoggard"
     email = "erikhoggard@gmail.com"
 
-[[params.navlinks]]
-name = "About"
-url = "/about/"
+[menu]
+    [[menu.main]]
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+    [[menu.main]]
+        name = "Photos"
+        url = "/photos/"
+        weight = 20
+    [[menu.main]]
+        name = "Music"
+        url = "/music/"
+        weight = 30
+    [[menu.main]]
+        name = "About"
+        url = "/about/"
+        weight = 40
 
-[[params.navlinks]]
-name = "Posts"
-url = "/posts/"
+[build]
+    [build.buildStats]
+        enable = true
+    [[build.cachebusters]]
+        source = 'assets/notwatching/hugo_stats\.json'
+        target = 'css'
+    [[build.cachebusters]]
+        source = '(postcss|tailwind)\.config\.js'
+        target = 'css'
+[module]
+    [[module.mounts]]
+        source = 'assets'
+        target = 'assets'
+    [[module.mounts]]
+        disableWatch = true
+        source = 'hugo_stats.json'
+        target = 'assets/notwatching/hugo_stats.json'
 
-[[params.navlinks]]
-name = "Photos"
-url = "/photos/"
+
+# Allow postcss to run
+[security]
+    [security.exec]
+        allow = ['^postcss$', '^npx$']
+

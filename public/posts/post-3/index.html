@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post 3</title>
+  <script>
+    
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+  
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<header class="flex justify-between items-center my-8">
+  
+  <a href="http://localhost:1313/" class="text-xl font-bold text-white hover:text-gray-300">
+    The World
+  </a>
+
+  
+  <nav>
+    <ul class="flex space-x-6">
+      
+      <li>
+        <a href="/posts/" class="text-gray-400 hover:text-white transition-colors">
+          Posts
+        </a>
+      </li>
+      
+      <li>
+        <a href="/photos/" class="text-gray-400 hover:text-white transition-colors">
+          Photos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/music/" class="text-gray-400 hover:text-white transition-colors">
+          Music
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="text-gray-400 hover:text-white transition-colors">
+          About
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+</header>
+
+<main>
+  
+<div class="container mx-auto px-4 mt-8">
+  <article class="post">
+    <h1 class="text-4xl font-bold mb-4">Post 3</h1>
+    <div class="text-gray-600 mb-4">
+      <span>March 15, 2023</span>
+    </div>
+    
+    <div class="prose lg:prose-xl max-w-none">
+      <p>Occaecat aliqua consequat laborum ut ex aute aliqua culpa quis irure esse magna dolore quis. Proident fugiat labore eu laboris officia Lorem enim. Ipsum occaecat cillum ut tempor id sint aliqua incididunt nisi incididunt reprehenderit. Voluptate ad minim sint est aute aliquip esse occaecat tempor officia qui sunt. Aute ex ipsum id ut in est velit est laborum incididunt. Aliqua qui id do esse sunt eiusmod id deserunt eu nostrud aute sit ipsum. Deserunt esse cillum Lorem non magna adipisicing mollit amet consequat.</p>
+<p><a href="bryce-canyon.jpg" target="_blank" rel="noopener noreferrer" class="block my-8">
+  <img
+    src="bryce-canyon.jpg"
+    alt="Bryce Canyon National Park"
+    
+    loading="lazy"
+  />
+</a>
+
+</p>
+<p>Sit excepteur do velit veniam mollit in nostrud laboris incididunt ea. Amet eu cillum ut reprehenderit culpa aliquip labore laborum amet sit sit duis. Laborum id proident nostrud dolore laborum reprehenderit quis mollit nulla amet veniam officia id id. Aliquip in deserunt qui magna duis qui pariatur officia sunt deserunt.</p>
+
+    </div>
+  </article>
+</div>
+
+</main>
+
+<script src="/js/main.js" defer></script>
+</body>
+</html>
