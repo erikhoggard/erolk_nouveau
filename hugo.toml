@@ -1,4 +1,5 @@
-baseURL = 'https://erolk.com'
+#baseURL = 'https://erolk.com'
+baseURL = 'https://d4dnr50jynk1n.cloudfront.net'
 languageCode = 'en-us'
 title = 'The World'
 theme = 'erolk-nouveau'
