@@ -1,9 +1,6 @@
 baseURL = 'https://erolk.com'
 languageCode = 'en-us'
 title = 'The World'
-#theme = 'console'
-#theme = 'chicago7'
-#theme = 'shibui'
 theme = 'erolk-nouveau'
 
 [params]
