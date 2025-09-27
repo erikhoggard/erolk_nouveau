@@ -1,20 +1,22 @@
 <header class="flex justify-between items-center my-8">
   {{/* Site Title */}}
-  <a href="{{ .Site.BaseURL }}" class="text-xl font-bold text-white hover:text-gray-300">
+  <a href="{{ .Site.BaseURL }}" class="text-xl font-bold text-text-primary hover:text-link-hover transition-colors">
     {{ .Site.Title }}
   </a>
 
   {{/* Navigation Menu */}}
   <nav>
-    <ul class="flex space-x-6">
+    <ul class="flex items-center space-x-6">
       {{ range .Site.Menus.main }}
       <li>
-        <a href="{{ .URL }}" class="text-gray-400 hover:text-white transition-colors">
+        <a href="{{ .URL }}" class="text-link-primary hover:text-text-primary transition-colors">
           {{ .Name }}
         </a>
       </li>
       {{ end }}
+      <li>
+        {{ partial "theme-toggle.html" . }}
+      </li>
     </ul>
-
   </nav>
 </header>

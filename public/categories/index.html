@@ -1,29 +1,68 @@
 <!DOCTYPE html>
-<html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="en" class="">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=13965&amp;path=livereload" data-no-instant defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Categories</title>
+  <title>Categories | The World</title>
+
+  
+  <link rel="stylesheet" href="http://localhost:13965/css/main.css">
+
   <script>
-    
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark')
     }
   </script>
-  
-  <link rel="stylesheet" href="/css/main.css">
 </head>
-<body>
-<header class="flex justify-between items-center mb-8">
-  <a href="http://localhost:1313/" class="text-xl font-bold">
+<body class="transition-colors duration-300">
+
+<header class="flex justify-between items-center my-8">
+  
+  <a href="http://localhost:13965/" class="text-xl font-bold text-text-primary hover:text-link-hover transition-colors">
     The World
   </a>
-  <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+
+  
+  <nav>
+    <ul class="flex items-center space-x-6">
+      
+      <li>
+        <a href="/posts/" class="text-link-primary hover:text-text-primary transition-colors">
+          Posts
+        </a>
+      </li>
+      
+      <li>
+        <a href="/photos/" class="text-link-primary hover:text-text-primary transition-colors">
+          Photos
+        </a>
+      </li>
+      
+      <li>
+        <a href="/music/" class="text-link-primary hover:text-text-primary transition-colors">
+          Music
+        </a>
+      </li>
+      
+      <li>
+        <a href="/about/" class="text-link-primary hover:text-text-primary transition-colors">
+          About
+        </a>
+      </li>
+      
+      <li>
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+    
+    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zM8 16a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM1.05 14.95a1 1 0 010-1.414l.707-.707a1 1 0 111.414 1.414l-.707.707a1 1 0 01-1.414 0z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+    
     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-  </button>
+</button>
+
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <main>
@@ -40,6 +79,9 @@
 
 </main>
 
-<script src="/js/main.js" defer></script>
+
+<script src="/js/theme.js" defer></script>
 </body>
 </html>
+
+

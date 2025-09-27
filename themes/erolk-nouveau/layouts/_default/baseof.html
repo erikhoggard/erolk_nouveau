@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Lang }}" class="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }}</title>
+  <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+  {{ $style := resources.Get "css/main.css" | postCSS }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}">
+
   <script>
-    // Avoids a flash of the wrong theme on page load
     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark')
     }
   </script>
-  {{ $styles := resources.Get "css/main.css" | postCSS }}
-  <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 </head>
-<body>
+<body class="transition-colors duration-300">
+
 {{ partial "header.html" . }}
+
 <main>
   {{ block "main" . }}{{ end }}
 </main>
-{{ $js := resources.Get "js/main.js" | js.Build }}
-<script src="{{ $js.RelPermalink }}" defer></script>
+
+{{ $themeJS := resources.Get "js/theme.js" }}
+<script src="{{ $themeJS.RelPermalink }}" defer></script>
 </body>
 </html>
+
+
