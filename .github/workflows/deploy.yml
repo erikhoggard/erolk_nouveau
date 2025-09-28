@@ -27,6 +27,9 @@ jobs:
           aws s3 sync s3://${{ secrets.AWS_S3_PHOTOS_BUCKET }} assets/photos
           aws s3 sync s3://${{ secrets.AWS_S3_AUDIO_BUCKET }} assets/audio
 
+      - name: Verify Downloaded Assets
+        run: ls -R assets
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
