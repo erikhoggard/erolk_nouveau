@@ -1,7 +1,7 @@
 +++
 title = "Eastern Market" 
 date = 2025-05-21
-image = "photos/easternMarket.jpg" 
+image = "photos/EasternMarket.jpg" 
 draft = false
 +++
 
