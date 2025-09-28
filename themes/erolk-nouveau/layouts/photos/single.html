@@ -1,35 +1,25 @@
 {{ define "main" }}
 <main>
   <div class="container mx-auto px-4 mt-8">
-    <h1 class="text-4xl font-bold mb-8 text-text-primary">{{ .Title }}</h1>
+    <h1 class="text-4xl font-bold mb-4 text-text-primary">{{ .Title }}</h1>
+
+    {{ with resources.Get .Params.image }}
+    {{/* Create a larger, web-optimized version for display */}}
+    {{ $image_display := .Resize "1200x" }}
+
+    <a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">
+      <div class="mb-8">
+        <img src="{{ $image_display.RelPermalink }}" alt="{{ $.Title }}" width="{{ $image_display.Width }}" height="{{ $image_display.Height }}" class="w-full h-auto rounded-lg shadow-lg">
+      </div>
+    </a>
+    {{ end }}
+
     {{ if .Content }}
-    <div class="prose lg:prose-xl max-w-none mb-8">
+    <div class="prose lg:prose-xl max-w-none">
       {{ .Content }}
     </div>
     {{ end }}
 
-    {{ $pages := .Pages.ByDate.Reverse }}
-
-    {{ if $pages }}
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      {{ range $pages }}
-      {{/* Changed .Params.image_path to .Params.image */}}
-      {{ with .Params.image }}
-      <a href="{{ .Permalink }}" class="relative block overflow-hidden group aspect-square rounded-lg shadow-md">
-        <img src="{{ . | absURL }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="absolute bottom-0 left-0 w-full p-3 text-white">
-          <h3 class="font-bold truncate translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{{ .Title }}</h3>
-          <p class="text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">{{ .Date.Format "Jan 2, 2006" }}</p>
-        </div>
-      </a>
-      {{ end }}
-      {{ end }}
-    </div>
-    {{ else }}
-    <p class="text-text-secondary">No photo entries found. Add photos by creating <code>.md</code> files in <code>content/photos/</code>.</p>
-    {{ end }}
   </div>
 </main>
 {{ end }}
-

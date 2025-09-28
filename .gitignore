@@ -33,5 +33,12 @@ go.work.sum
 
 node_modules
 
-/static/photos
-/static/audio
+/assets/photos/*.jpg
+/assets/audio/*.wav
+
+# Ignore Hugo's temporary build cache
+/resources
+
+# Ignore the published site (should already be here)
+/public
+

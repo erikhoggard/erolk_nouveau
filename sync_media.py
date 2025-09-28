@@ -5,8 +5,8 @@ import os
 PHOTO_BUCKET = "erolk-site-photos"
 AUDIO_BUCKET = "erolk-site-audio"
 
-PHOTO_DIR = "static/photos"
-AUDIO_DIR = "static/audio"
+PHOTO_DIR = "assets/photos"
+AUDIO_DIR = "assets/audio"
 
 def run_command(command):
     """Runs a command and checks for errors."""
