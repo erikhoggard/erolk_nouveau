@@ -7,9 +7,9 @@
     {{/* Create a larger, web-optimized version for display */}}
     {{ $image_display := .Resize "1200x" }}
 
-    <a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer">
+    <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
       <div class="mb-8">
-        <img src="{{ $image_display.RelPermalink }}" alt="{{ $.Title }}" width="{{ $image_display.Width }}" height="{{ $image_display.Height }}" class="w-full h-auto rounded-lg shadow-lg">
+        <img src="{{ $image_display.Permalink }}" alt="{{ $.Title }}" width="{{ $image_display.Width }}" height="{{ $image_display.Height }}" class="w-full h-auto rounded-lg shadow-lg">
       </div>
     </a>
     {{ end }}
