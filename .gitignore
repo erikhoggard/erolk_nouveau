@@ -33,8 +33,8 @@ go.work.sum
 
 node_modules
 
-/assets/photos/*.jpg
-/assets/audio/*.wav
+/assets/photos/
+/assets/audio/
 
 # Ignore Hugo's temporary build cache
 /resources
