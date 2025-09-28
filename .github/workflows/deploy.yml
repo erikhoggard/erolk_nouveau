@@ -15,6 +15,21 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.150.1' # Pinned to your version
+          extended: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm install
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -26,24 +41,6 @@ jobs:
         run: |
           aws s3 sync s3://${{ secrets.AWS_S3_PHOTOS_BUCKET }} assets/photos
           aws s3 sync s3://${{ secrets.AWS_S3_AUDIO_BUCKET }} assets/audio
-
-      - name: Verify Downloaded Assets
-        run: ls -R assets
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: 'latest'
-          extended: true
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install Node dependencies
-        run: npm install
 
       - name: Build
         run: hugo --minify
