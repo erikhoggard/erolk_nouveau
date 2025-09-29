@@ -1,4 +1,5 @@
-baseURL = 'never.direct'
+baseURL = '/'
+relativeURLs = true
 languageCode = 'en-us'
 title = 'Never;Direct'
 theme = 'erolk-nouveau'
