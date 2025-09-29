@@ -1,30 +1,29 @@
-#baseURL = 'https://erolk.com'
-baseURL = 'https://d4dnr50jynk1n.cloudfront.net'
+baseURL = 'never.direct'
 languageCode = 'en-us'
 title = 'Never;Direct'
 theme = 'erolk-nouveau'
 
 [params]
-    author = "Erik Hoggard"
-    email = "erikhoggard@gmail.com"
+author = "Erik Hoggard"
+email = "erikhoggard@gmail.com"
 
 [menu]
-    [[menu.main]]
-        name = "Posts"
-        url = "/posts/"
-        weight = 10
-    [[menu.main]]
-        name = "Photos"
-        url = "/photos/"
-        weight = 20
-    [[menu.main]]
-        name = "Music"
-        url = "/music/"
-        weight = 30
-    [[menu.main]]
-        name = "About"
-        url = "/about/"
-        weight = 40
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 10
+[[menu.main]]
+name = "Photos"
+url = "/photos/"
+weight = 20
+[[menu.main]]
+name = "Music"
+url = "/music/"
+weight = 30
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 40
 
 #[build]
 #    [build.buildStats]
@@ -47,6 +46,6 @@ theme = 'erolk-nouveau'
 
 # Allow postcss to run
 [security]
-    [security.exec]
-        allow = ['^postcss$', '^npx$']
+[security.exec]
+allow = ['^postcss$', '^npx$']
 
