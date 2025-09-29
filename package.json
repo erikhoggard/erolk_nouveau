@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "hugo server",
+    "draft": "hugo server -D",
     "build": "hugo --minify"
   },
   "repository": {

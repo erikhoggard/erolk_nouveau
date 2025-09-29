@@ -1,3 +1,4 @@
+//tailwind.config.js
 module.exports = {
   darkMode: 'class',
   content: [
@@ -7,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['ChicagoFLF', 'sans-serif'],
-        mono: ['Roboto Mono', 'monospace'],
+        sans: ['Fira Code Mono', 'monospace'],
+        mono: ['Fira Code Mono', 'monospace']
       },
 
       colors: {
@@ -16,12 +17,13 @@ module.exports = {
         background: 'rgb(var(--color-background) / <alpha-value>)',
         'text-primary': 'rgb(var(--color-text-primary) / <alpha-value>)',
         'text-secondary': 'rgb(var(--color-text-secondary) / <alpha-value>)',
+        'text-lightened': 'rgb(var(--color-text-lightened) / <alpha-value>)',
         'link-primary': 'rgb(var(--color-link-primary) / <alpha-value>)',
         'link-hover': 'rgb(var(--color-link-hover) / <alpha-value>)',
         border: 'rgb(var(--color-border) / <alpha-value>)',
       },
       // Configure the typography plugin to use our theme colors
-      typography: ({ theme }) => ({
+      typography: ({theme}) => ({
         DEFAULT: {
           css: {
             '--tw-prose-body': 'rgb(var(--color-text-secondary))',

@@ -1,25 +1,30 @@
 {{ define "main" }}
 <main>
-  <div class="container mx-auto px-4 mt-8">
-    <h1 class="text-4xl font-bold mb-4 text-text-primary">{{ .Title }}</h1>
+    <div class="container mx-auto px-4 mt-8">
+        <h1 class="text-4xl font-bold mb-4 text-text-primary">{{ .Title }}</h1>
 
-    {{ with resources.Get .Params.image }}
-    {{/* Create a larger, web-optimized version for display */}}
-    {{ $image_display := .Resize "1200x" }}
+        {{ with resources.Get .Params.image }}
+        {{/* Create a larger, web-optimized version for display */}}
+        {{ $image_display := .Resize "1200x" }}
 
-    <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
-      <div class="mb-8">
-        <img src="{{ $image_display.Permalink }}" alt="{{ $.Title }}" width="{{ $image_display.Width }}" height="{{ $image_display.Height }}" class="w-full h-auto rounded-lg shadow-lg">
-      </div>
-    </a>
-    {{ end }}
+        <a href="{{ .Permalink }}" target="_blank" rel="noopener noreferrer">
+            <div class="mb-8">
+                <img src="{{ $image_display.Permalink }}" alt="{{ $.Title }}" width="{{ $image_display.Width }}"
+                     height="{{ $image_display.Height }}" class="w-full h-auto rounded-lg shadow-lg">
+            </div>
+        </a>
+        <div class="flex justify-between mb-4">
+            <p class="font-bold">{{$.Params.Medium}}</p>
+            <p class="italic text-text-lightened">{{ $.Date.Format "January 2, 2006" }}</p>
+        </div>
+        {{ end }}
 
-    {{ if .Content }}
-    <div class="prose lg:prose-xl max-w-none">
-      {{ .Content }}
+        {{ if .Content }}
+        <div class="prose lg:prose-xl max-w-none">
+            {{ .Content }}
+        </div>
+        {{ end }}
+
     </div>
-    {{ end }}
-
-  </div>
 </main>
 {{ end }}

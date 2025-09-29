@@ -15,29 +15,30 @@
     {{/* Photo Grid */}}
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {{ range .Pages.ByDate.Reverse }}
-            {{/* Save the page context in a variable named $page */}}
-            {{ $page := . }}
+        {{ $page := . }}
+        {{ with resources.Get $page.Params.image }}
 
-            {{/* Now, find the image using the page's front matter */}}
-            {{ with resources.Get $page.Params.image }}
-                {{ $thumbnail := .Resize "400x" }}
+        {{/* 1. Update to a 3:2 ratio */}}
+        {{ $thumbnail := .Fill "600x400 Center" }}
 
-                {{/* Use the $page variable for the link */}}
-                <a href="{{ $page.Permalink }}" class="relative group block overflow-hidden rounded-lg">
+        {{/* 2. Update the aspect ratio class */}}
+        <a href="{{ $page.Permalink }}" class="relative group block overflow-hidden rounded-lg aspect-[3/2]">
 
-                    <img src="{{ $thumbnail.Permalink }}" alt="{{ $page.Title }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
+            <img src="{{ $thumbnail.Permalink }}" alt="{{ $page.Title }}" width="{{ $thumbnail.Width }}"
+                 height="{{ $thumbnail.Height }}"
+                 class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
 
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {{/* Use the $page variable for the Title and Date */}}
-                        <h3 class="text-white text-lg font-bold text-center">{{ $page.Title }}</h3>
-                        <p class="text-gray-300 text-sm mt-1">{{ $page.Date.Format "January 2, 2006" }}</p>
-                    </div>
-                </a>
-            {{ end }}
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 class="text-white text-lg font-bold text-center">{{ $page.Title }}</h3>
+                <p class="text-gray-300 text-sm mt-1">{{ $page.Date.Format "January 2, 2006" }}</p>
+            </div>
+        </a>
+        {{ end }}
         {{ else }}
-            <p class="col-span-full text-center text-text-secondary">No photo entries found in 'content/photos/'.</p>
+        <p class="col-span-full text-center text-text-secondary">No photo entries found in 'content/photos/'.</p>
         {{ end }}
     </div>
+
 </div>
 {{ end }}
 

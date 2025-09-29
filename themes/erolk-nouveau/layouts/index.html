@@ -7,8 +7,9 @@
     {{/* Loop through the result (it will only be one post) and display it like a single page */}}
     {{ range $latestPost }}
     <article class="post">
-        <div class="text-gray-400 mb-4">
-            <span>{{ .Date.Format "01/02/06" }}</span>
+        <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+        <div class="mb-4">
+            <span>{{ .Date.Format "January 2, 2006" }}</span>
         </div>
         <div class="prose lg:prose-xl max-w-none">
             {{ .Content }}
@@ -16,8 +17,6 @@
     </article>
     {{ end }}
 
-    <hr />
-    <p><a href="/posts">old news</a></p>
 
 </div>
 {{ end }}

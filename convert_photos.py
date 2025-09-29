@@ -2,7 +2,7 @@ import os
 import subprocess
 import sys
 
-TARGET_DIR = "static/photos"
+TARGET_DIR = "assets/photos"
 
 DELETE_ORIGINALS = False
 

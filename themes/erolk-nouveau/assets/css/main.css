@@ -1,3 +1,28 @@
+/*main.css*/
+@font-face {
+    font-family: 'Fira Code Mono';
+    src: url('/fonts/firaCode/FiraCode-Regular.woff2') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code Mono';
+    src: url('/fonts/firaCode/FiraCode-Bold.woff2') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fira Code Mono';
+    src: url('/fonts/firaCode/FiraCode-Italic.woff2') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,42 +30,65 @@
 @layer base {
     :root {
         /* Light Theme Colors (New) */
-        --color-background: 255 255 255; /* white */
-        --color-text-primary: 34 34 34;   /* #222 - For headers/bold */
-        --color-text-secondary: 85 85 85; /* #555 - For body text */
-        --color-link-primary: 85 85 85;   /* #555 */
-        --color-link-hover: 0 0 0;         /* black */
-        --color-border: 221 221 221;       /* #ddd */
+        --color-background: 236 234 232; /* offwhite */
+        --color-text-primary: 45 45 55; /* #222 - For headers/bold */
+        --color-text-secondary: 85 85 100; /* #555 - For body text */
+        --color-text-lightened: 153 153 165; /* #999 */
+        --color-link-primary: 85 85 95; /* #555 */
+        --color-link-hover: 20 20 23; /* black */
+        --color-border: 221 221 221; /* #ddd */
     }
 
     .dark {
         /* Dark Theme Colors (Your Original Colors) */
-        --color-background: 34 34 34;     /* #222 */
-        --color-text-primary: 255 255 255; /* white - For headers/bold */
-        --color-text-secondary: 204 204 204; /* #ccc - For body text */
+        --color-background: 45 45 45; /* #222 */
+        --color-text-primary: 236 234 232; /* white - For headers/bold */
+        --color-text-secondary: 206 204 202; /* #ccc - For body text */
+        --color-text-lightened: 142 140 138; /* #aaa */
         --color-link-primary: 170 170 170; /* #aaa */
-        --color-link-hover: 204 204 204;   /* #ccc */
-        --color-border: 85 85 85;         /* #555 */
+        --color-link-hover: 204 204 204; /* #ccc */
+        --color-border: 85 85 85; /* #555 */
     }
 
     /* Body now uses the secondary text color as the default */
     body {
         @apply bg-background text-text-secondary font-mono max-w-[800px] mx-auto my-10 px-4 leading-relaxed;
+        font-variant-ligatures: common-ligatures;
+        -webkit-font-variant-ligatures: common-ligatures;
     }
+
     h1 {
         @apply font-bold text-2xl mt-8;
     }
+
     hr {
         @apply mt-16 border-none h-px bg-border;
     }
+
     a {
         @apply text-link-primary hover:text-link-hover;
     }
+
     .prose a {
         @apply text-link-primary hover:text-link-hover;
     }
+
     /* Headers and strong text correctly use the primary color */
     .prose h1, .prose h2, .prose h3, .prose h4, .prose strong {
         @apply text-text-primary;
     }
+
+
+    @layer components {
+        .theme-toggle__mask {
+            transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            transform-box: fill-box;
+        }
+
+        .dark .theme-toggle__mask {
+            transform: translateX(-32px);
+        }
+    }
+
 }
