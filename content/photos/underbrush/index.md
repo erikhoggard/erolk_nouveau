@@ -6,9 +6,11 @@ medium = "Digital - Fujifilm X-T30"
 draft = false 
 +++
 
-This is actually a picture of my Aerogarden, which I had growing up in my 3rd story loft room back when I was living in
+This is actually a picture of my Aerogarden, which I had set up in my 3rd story loft/bedroom back when I was living in
 Indianapolis. Pictured most prominently are thyme, basil, and thai basil.
 
 Both the Aerogarden and the camera I took this photo with were purchased in the beginning of the Covid outbreak.
-I didn't get a ton of sunlight in that loft bedroom, so the Aerogarden provided some nice light and greenery during
+I didn't get a ton of natural light in that loft, and the Aerogarden provided some nice light and greenery during
 lockdown.
+
+Unfortunately, I've lost a lot of the pictures I took in 2020.

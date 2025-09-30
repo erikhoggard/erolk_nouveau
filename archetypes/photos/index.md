@@ -6,6 +6,6 @@ medium = ""
 draft = true
 +++
 
-[//]: (# usage: hugo new photos/my-ass)
+[//]: (# usage: hugo new content photos/my-ass)
 
 This is the caption for the photo.

@@ -31,19 +31,19 @@
     :root {
         /* Light Theme Colors (New) */
         --color-background: 236 234 232; /* offwhite */
-        --color-text-primary: 45 45 55; /* #222 - For headers/bold */
-        --color-text-secondary: 85 85 100; /* #555 - For body text */
+        --color-text-primary: 65 65 85; /* #222 - For headers/bold */
+        --color-text-secondary: 100 100 115; /* #555 - For body text */
         --color-text-lightened: 153 153 165; /* #999 */
-        --color-link-primary: 85 85 95; /* #555 */
+        --color-link-primary: 95 95 110; /* #555 */
         --color-link-hover: 20 20 23; /* black */
         --color-border: 221 221 221; /* #ddd */
     }
 
     .dark {
         /* Dark Theme Colors (Your Original Colors) */
-        --color-background: 45 45 45; /* #222 */
-        --color-text-primary: 236 234 232; /* white - For headers/bold */
-        --color-text-secondary: 206 204 202; /* #ccc - For body text */
+        --color-background: 41 40 47; /* #222 */
+        --color-text-primary: 226 224 222; /* white - For headers/bold */
+        --color-text-secondary: 176 174 172; /* #ccc - For body text */
         --color-text-lightened: 142 140 138; /* #aaa */
         --color-link-primary: 170 170 170; /* #aaa */
         --color-link-hover: 204 204 204; /* #ccc */

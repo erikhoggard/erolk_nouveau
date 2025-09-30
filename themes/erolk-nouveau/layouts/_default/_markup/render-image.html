@@ -1,10 +1,12 @@
-<a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer" class="block my-8">
-  <img
-    src="{{ .Destination | safeURL }}"
-    alt="{{ .Text }}"
-    {{ with .Title }}title="{{ . }}"{{ end }}
-    loading="lazy"
-    class="rounded-lg"
-  />
-</a>
-
+<figure class="my-8">
+    <a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer" class="block">
+        <img
+                src="{{ .Destination | safeURL }}"
+                alt="{{ .Text }}"
+                {{ with .Title }}title="{{ . }}" {{ end }}
+                loading="lazy"
+                class="rounded-lg"
+        />
+    </a>
+    <figcaption class="text-center italic text-text-lightened mt-2">{{ .Text }}</figcaption>
+</figure>
