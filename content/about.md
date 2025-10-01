@@ -7,7 +7,7 @@ date = '2025-09-27'
 ### Who Are You? What is this???
 
 Hello! My name is Erik.
-**Nothing;Today** is a sort of a repository for all of my side projects and endeavors.
+**Nothing Town** is a sort of a repository for all of my side projects and endeavors.
 
 Having been unsatisfied with platforms like SoundCloud
 (and also having the desire to avoid the hellscape wasteland that is modern social media),

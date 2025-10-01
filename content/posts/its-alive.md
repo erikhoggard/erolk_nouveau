@@ -1,6 +1,6 @@
 +++
-date = '2025-09-30T16:01:53-04:00'
-draft = true
+date = '2025-09-30T19:01:53-04:00'
+draft = false
 title = "It's Alive!!"
 +++
 
@@ -18,7 +18,7 @@ and it only took me a few days. I even had some time to add some basic content i
 ## Content
 
 Posting to Instagram, SoundCloud, etc. makes me feel gross; Disgusting. My hopes are that this site will be a more
-hygenic and healthy place to host my content. As an added bonus, this almost guarantees that nobody will ever see
+hygenic and organic place to host my content. As an added bonus, this almost guarantees that nobody will ever see
 anything that I upload.
 
 So my current plans are to host two main types of content: photos and music. I've already uploaded some of my favorite
