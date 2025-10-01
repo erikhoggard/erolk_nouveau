@@ -35,13 +35,15 @@
         </button>
     </div>
 </header>
+
 {{/* --- Mobile Menu Dropdown --- */}}
-{{/* This element is separate from the header and toggled by JS */}}
+{{/* --- Mobile Menu Dropdown --- */}}
 <nav id="main-nav" class="hidden md:hidden pb-4">
-    <ul class="flex flex-col space-y-2 p-4 bg-background-secondary rounded-md shadow-lg">
+    <ul class="flex flex-col space-y-2 p-4 bg-background-secondary rounded-md  text-right">
         {{ range .Site.Menus.main }}
         <li>
-            <a href="{{ .URL }}" class="block text-link-primary hover:text-text-primary transition-colors">
+            <a href="{{ .URL }}"
+               class="block text-link-primary hover:text-text-primary transition-colors">
                 {{ .Name }}
             </a>
         </li>
