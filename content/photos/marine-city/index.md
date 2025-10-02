@@ -13,7 +13,7 @@ around for decades, though most close after a year or two and are then in turn r
 themselves have relatively high likelihoods of being antique shops. So goes the cycle.
 
 Many of the other businesses in the tiny downtown area are inexplicably niche, like a combination art gallery, specialty 
-kitchenware shop and TTRPG/TCG store. *Two* different performing arts theaters. An old-timey candy shop.A shop that 
+kitchenware shop and TTRPG/TCG store. *Two* different performing arts theaters. An old-timey candy shop. A shop that 
 *only* sells popcorn. We're talking about a town with a population of 4,006. It's a weird place, at least an hour out of 
 the way of anywhere you'd actually want to be in Michigan, but it's got its own unique charm.
 
