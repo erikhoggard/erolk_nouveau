@@ -8,9 +8,9 @@ draft = false
 
 The downtown waterfront of Marine City, MI, featuring the trademark lighthouse. This is another photo I took while 
 kayaking down the St. Clair River. I grew up in Marine City, and it's always fun to go back and visit as an adult.
-Around 40% of the businesses in MC at any given time are antique shops. Some have been around for decades, though most 
-close after a year or two and are then replaced by another business that itself has a relatively high likelihood of 
-being an antique shop. So goes the cycle.
+Nobody quite knows why, but around 40% of the businesses in MC at any given time are antique shops. Some have been 
+around for decades, though most close after a year or two and are then in turn replaced by new businesses that 
+themselves have relatively high likelihoods of being antique shops. So goes the cycle.
 
 Many of the other businesses in the tiny downtown area are inexplicably niche, like a combination art gallery, specialty 
 kitchenware shop and TTRPG/TCG store. *Two* different performing arts theaters. An old-timey candy shop.A shop that 
