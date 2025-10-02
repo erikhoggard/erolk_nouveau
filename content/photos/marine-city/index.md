@@ -6,8 +6,19 @@ medium = "Kodak Gold 200, 35mm"
 draft = false
 +++
 
-The downtown waterfront of Marine City, MI, where I grew up, featuring the hallmark lighthouse.
+The downtown waterfront of Marine City, MI, featuring the hallmark lighthouse. This is another photo taken during the 
+kayak trip. I grew up in Marine City, and it's always fun to go back and visit as an adult. About 40% of the businesses
+in MC at any given time are antique shops. Some have been around for decades, though most close after a year or two and
+are then replaced by another business that has a relatively high likelihood of being an antique shop. So goes the cycle.
 
-Another photo taken during the kayak trip. I enjoy the symmetry in this one. It's always fun to go back to MC as an
-adult.
-Though much busier now than it used to be, it still feels like a small town.
+Many of the other businesses in the tiny downtown area are inexplicably niche, like a combination art gallery, specialty 
+kitchenware shop and TTRPG/TCG store. *Two* different performing arts theaters. An old-timey candy shop.A shop that 
+*only* sells popcorn. We're talking about a town with a population of 4,006. It's a weird place, at least an hour out of 
+the way of anywhere you'd actually want to be in Michigan, but it's got its own unique charm.
+
+So, this is my lighthouse photo. 
+[There are many like it](https://www.google.com/search?q=marine+city+lighthouse&client=firefox-b-1-d&sca_esv=da5792c7619f0cb2&udm=2&biw=1271&bih=901&ei=XdrdaK6lF7Cfw8cPjYiy4AQ&ved=0ahUKEwjux-2ps4SQAxWwz_ACHQ2EDEwQ4dUDCBE&uact=5&oq=marine+city+lighthouse&gs_lp=Egtnd3Mtd2l6LWltZyIWbWFyaW5lIGNpdHkgbGlnaHRob3VzZTIFEAAYgAQyBhAAGAgYHjIGEAAYCBgeMgYQABgIGB5IvhpQkQlYghlwAngAkAEAmAFKoAGKBqoBAjEzuAEDyAEA-AEBmAIPoALKBsICChAAGIAEGIoFGEPCAggQABiABBixA8ICBhAAGAcYHpgDAIgGAZIHAjE1oAesLLIHAjEzuAe9BsIHBTAuNy44yAcs&sclient=gws-wiz-img).
+, but this one is mine
+I grew up seeing tons of photographers out on the waterfront, all hours of the day and all seasons. The lighthouse was an extremely common 
+subject of photographs. Gigantic lenses, taking pictures of freighters or birds, or various bundles of sticks protruding 
+from the water.
