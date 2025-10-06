@@ -16,8 +16,12 @@
         document.documentElement.classList.remove('dark')
       }
     </script>
+
+    {{/* Add a block for page-specific styles */}}
+    {{ block "styles" . }}{{ end }}
 </head>
 <body class="transition-colors duration-300">
+{{ warnf "BASEOF.HTML | Menu Status: %v" .Site.Menus.main }}
 {{ partial "header.html" . }}
 
 <main>
@@ -31,7 +35,8 @@
 {{ $mobileMenuJS := resources.Get "js/mobile-menu.js" }}
 {{ $scripts := slice $mainJS $themeJS $mobileMenuJS | resources.Concat "js/bundle.js" }}
 <script src="{{ $scripts.RelPermalink }}" defer></script>
+
+{{/* Add a block for page-specific scripts */}}
+{{ block "scripts" . }}{{ end }}
 </body>
 </html>
-
-

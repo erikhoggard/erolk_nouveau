@@ -1,33 +1,44 @@
 {{ define "main" }}
 <div class="container mx-auto px-4 mt-8">
-    <div class="prose lg:prose-xl max-w-none mb-8">
-        {{ with .Title }}
-        <h1>{{ . }}</h1>
-        {{ end }}
-
+    <div class="prose lg:prose-xl max-w-none mb-8 flex flex-row justify-between">
+        {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
         {{ with .Content }}
-        <div class="prose-styles">
-            {{ . }}
-        </div>
+        <div class="prose-styles">{{ . }}</div>
         {{ end }}
+        <div class="flex flex-col">
+            <button id="tag-filter-toggle" class="text-text-lightened">Tags</button>
+        </div>
     </div>
 
-    {{/* Photo Grid */}}
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {{ .Scratch.Set "tags" slice }}
+    {{ range .Pages }}
+    {{ with .Params.tags }}
+    {{ $existing_tags := $.Scratch.Get "tags" }}
+    {{ $.Scratch.Set "tags" ($existing_tags | union .) }}
+    {{ end }}
+    {{ end }}
+    {{ $tags := .Scratch.Get "tags" | sort }}
+
+    {{ if gt (len $tags) 0 }}
+    <div class="tag-section mb-4">
+        <div id="tag-filter-container" class="tag-filter--hidden mt-2">
+            {{ range $tags }}
+            <button class="tag-chip" data-tag="{{ . | urlize }}">{{ . }}</button>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="photo-grid">
         {{ range .Pages.ByDate.Reverse }}
         {{ $page := . }}
         {{ with resources.Get $page.Params.image }}
-
-        {{/* 1. Update to a 3:2 ratio */}}
         {{ $thumbnail := .Fill "600x400 Center" }}
-
-        {{/* 2. Update the aspect ratio class */}}
-        <a href="{{ $page.Permalink }}" class="relative group block overflow-hidden rounded-lg aspect-[3/2]">
-
+        <a href="{{ $page.Permalink }}" class="relative group block overflow-hidden rounded-lg aspect-[3/2] photo-item"
+           data-tags="{{ range $page.Params.tags }}{{ . | urlize }} {{ end }}">
             <img src="{{ $thumbnail.Permalink }}" alt="{{ $page.Title }}" width="{{ $thumbnail.Width }}"
                  height="{{ $thumbnail.Height }}"
                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110">
-
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <h3 class="text-white text-lg font-bold text-center">{{ $page.Title }}</h3>
                 <p class="text-gray-300 text-sm mt-1">{{ $page.Date.Format "January 2, 2006" }}</p>
@@ -38,9 +49,94 @@
         <p class="col-span-full text-center text-text-secondary">No photo entries found in 'content/photos/'.</p>
         {{ end }}
     </div>
-
 </div>
 {{ end }}
 
+{{ define "styles" }}
+<style>
+    .tag-chip {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background-color: #4a5568;
+        color: #e2e8f0;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
 
+    .tag-chip.selected {
+        background-color: #6c778a;
+    }
 
+    .tag-filter--hidden {
+        display: none;
+    }
+</style>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tagToggle = document.getElementById('tag-filter-toggle');
+    const tagContainer = document.getElementById('tag-filter-container');
+    if (tagToggle) {
+      tagToggle.addEventListener('click', () => tagContainer.classList.toggle('tag-filter--hidden'));
+    }
+    const tagChips = document.querySelectorAll('.tag-chip');
+    const photoItems = document.querySelectorAll('.photo-item');
+    let selectedTags = new Set();
+
+    function filterPhotos() {
+      photoItems.forEach(item => {
+        const itemTags = new Set(item.getAttribute('data-tags').split(' ').filter(Boolean));
+        if (selectedTags.size === 0 || [...selectedTags].every(t => itemTags.has(t))) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function updateURL() {
+      const url = new URL(window.location);
+      if (selectedTags.size > 0) {
+        url.searchParams.set('tags', [...selectedTags].join(','));
+      } else {
+        url.searchParams.delete('tags');
+      }
+      history.pushState({}, '', url);
+    }
+
+    function handleTagClick(chip) {
+      const tag = chip.getAttribute('data-tag');
+      chip.classList.toggle('selected');
+      if (chip.classList.contains('selected')) {
+        selectedTags.add(tag);
+      } else {
+        selectedTags.delete(tag);
+      }
+      filterPhotos();
+      updateURL();
+    }
+
+    tagChips.forEach(chip => chip.addEventListener('click', () => handleTagClick(chip)));
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagsFromURL = urlParams.get('tags');
+    if (tagsFromURL) {
+      tagsFromURL.split(',').forEach(tag => {
+        const chip = document.querySelector(`.tag-chip[data-tag="${tag}"]`);
+        if (chip) {
+          chip.classList.add('selected');
+          selectedTags.add(tag);
+        }
+      });
+      if (tagContainer) {
+        tagContainer.classList.remove('tag-filter--hidden');
+      }
+      filterPhotos();
+    }
+  });
+</script>
+{{ end }}

@@ -1,0 +1,20 @@
+{{ $pages := .Pages }}
+{{ .Scratch.Set "tags" slice }}
+{{ range $pages }}
+{{ with .Params.tags }}
+{{ $existing_tags := $.Scratch.Get "tags" }}
+{{ $.Scratch.Set "tags" ($existing_tags | union .) }}
+{{ end }}
+{{ end }}
+{{ $tags := .Scratch.Get "tags" | sort }}
+
+{{ if gt (len $tags) 0 }}
+<div class="tag-section mb-4">
+    <button id="tag-filter-toggle" class="font-semibold">Filter by Tag</button>
+    <div id="tag-filter-container" class="hidden mt-2">
+        {{ range $tags }}
+        <button class="tag-chip" data-tag="{{ . | urlize }}">{{ . }}</button>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

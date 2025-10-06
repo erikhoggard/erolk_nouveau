@@ -8,6 +8,9 @@ theme = 'erolk-nouveau'
 author = "Erik Hoggard"
 email = "erikhoggard@gmail.com"
 
+[taxonomies]
+tag = "tags"
+
 [menu]
 [[menu.main]]
 name = "Posts"

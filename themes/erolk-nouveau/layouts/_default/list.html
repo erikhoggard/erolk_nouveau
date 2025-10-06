@@ -1,18 +1,126 @@
 {{ define "main" }}
 <div class="prose prose-invert max-w-none prose-a:text-gray-400 hover:prose-a:text-gray-200">
 
-  <h1>{{ .Title }}</h1>
+    <h1>{{ .Title }}</h1>
 
-  <ul class="!list-none !p-0">
+    {{ .Scratch.Set "tags" slice }}
     {{ range .Pages }}
-    <li class="flex justify-between items-baseline mb-2">
-      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-      <span class="text-sm text-gray-500">{{ .Date.Format "01/02/06" }}</span>
-    </li>
+    {{ with .Params.tags }}
+    {{ $existing_tags := $.Scratch.Get "tags" }}
+    {{ $.Scratch.Set "tags" ($existing_tags | union .) }}
     {{ end }}
-  </ul>
+    {{ end }}
+    {{ $tags := .Scratch.Get "tags" | sort }}
+
+    {{ if gt (len $tags) 0 }}
+    <div class="tag-section mb-4">
+        <button id="tag-filter-toggle" class="font-semibold">Filter by Tag</button>
+        <div id="tag-filter-container" class="tag-filter--hidden mt-2">
+            {{ range $tags }}
+            <button class="tag-chip" data-tag="{{ . | urlize }}">{{ . }}</button>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+
+
+    <ul class="!list-none !p-0" id="content-list">
+        {{ range .Pages }}
+        <li class="flex justify-between items-baseline mb-2 content-item"
+            data-tags="{{ range .Params.tags }}{{ . | urlize }} {{ end }}">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <span class="text-sm text-gray-500">{{ .Date.Format "01/02/06" }}</span>
+        </li>
+        {{ end }}
+    </ul>
 </div>
-
-
 {{ end }}
 
+{{ define "styles" }}
+<style>
+    .tag-chip {
+        display: inline-block;
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        background-color: #4a5568;
+        color: #e2e8f0;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .tag-chip.selected {
+        background-color: #6c778a;
+    }
+
+    .tag-filter--hidden {
+        display: none;
+    }
+</style>
+{{ end }}
+
+{{ define "scripts" }}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const tagToggle = document.getElementById('tag-filter-toggle');
+    const tagContainer = document.getElementById('tag-filter-container');
+    if (tagToggle) {
+      tagToggle.addEventListener('click', () => tagContainer.classList.toggle('tag-filter--hidden'));
+    }
+    const tagChips = document.querySelectorAll('.tag-chip');
+    const contentItems = document.querySelectorAll('.content-item');
+    let selectedTags = new Set();
+
+    function filterContent() {
+      contentItems.forEach(item => {
+        const itemTags = new Set(item.getAttribute('data-tags').split(' ').filter(Boolean));
+        if (selectedTags.size === 0 || [...selectedTags].every(t => itemTags.has(t))) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function updateURL() {
+      const url = new URL(window.location);
+      if (selectedTags.size > 0) {
+        url.searchParams.set('tags', [...selectedTags].join(','));
+      } else {
+        url.searchParams.delete('tags');
+      }
+      history.pushState({}, '', url);
+    }
+
+    function handleTagClick(chip) {
+      const tag = chip.getAttribute('data-tag');
+      chip.classList.toggle('selected');
+      if (chip.classList.contains('selected')) {
+        selectedTags.add(tag);
+      } else {
+        selectedTags.delete(tag);
+      }
+      filterContent();
+      updateURL();
+    }
+
+    tagChips.forEach(chip => chip.addEventListener('click', () => handleTagClick(chip)));
+    const urlParams = new URLSearchParams(window.location.search);
+    const tagsFromURL = urlParams.get('tags');
+    if (tagsFromURL) {
+      tagsFromURL.split(',').forEach(tag => {
+        const chip = document.querySelector(`.tag-chip[data-tag="${tag}"]`);
+        if (chip) {
+          chip.classList.add('selected');
+          selectedTags.add(tag);
+        }
+      });
+      if (tagContainer) {
+        tagContainer.classList.remove('tag-filter--hidden');
+      }
+      filterContent();
+    }
+  });
+</script>
+{{ end }}

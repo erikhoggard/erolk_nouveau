@@ -2,6 +2,7 @@
 date = '2025-09-30T19:01:53-04:00'
 draft = false
 title = "It's Alive!!"
+tags = ["updates", "meta"]
 +++
 
 # This is a Website
