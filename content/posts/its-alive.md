@@ -6,20 +6,21 @@ title = "It's Alive!!"
 
 # This is a Website
 
-In fact, it's *my* website. I've had this idea for a few years now: A single place to keep photos, music, art, stupid
+In fact, it's *my* website. I've wanted to do this for a few years now: A single place to keep photos, music, art,
+stupid
 thoughts, whatever other scraps and odds and ends I have laying around. I've actually started developing some version of
-a personal website multiple times. Some combination of perfectionism and massive feature creep have always prevented me
+a personal website multiple times. A combination of perfectionism and massive feature creep have always prevented me
 from actually bringing anything to fruition.
 
-This time, I decided to go much simpler. Instead of some huge React or Angular project, this is a stupid, dead-simple
-static website developed with [Hugo](https://gohugo.io/). The result is an actual site, deployed to the real internet,
-and it only took me a few days. I even had some time to add some basic content in the form of old photos.
+This time, I decided to go much simpler. Instead of some huge webapp project, this is a stupid, dead-simple
+static website developed with [Hugo](https://gohugo.io/). The result is that I have an actual site, actually deployed to
+the real internet, and it only took me a few days.
 
 ## Content
 
 Posting to Instagram, SoundCloud, etc. makes me feel gross; Disgusting. My hopes are that this site will be a more
-hygenic and organic place to host my content. As an added bonus, this almost guarantees that nobody will ever see
-anything that I upload.
+hygienic and organic place to host my content. No likes, no view counts, and no comments. Better still, this almost
+guarantees that nobody will ever see anything that I upload.
 
 So my current plans are to host two main types of content: photos and music. I've already uploaded some of my favorite
 photos dating back to early 2020 (or at least what's left of them — many have unfortunately gone missing) with some

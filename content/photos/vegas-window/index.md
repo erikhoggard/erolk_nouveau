@@ -12,4 +12,3 @@ floor of the Vdara hotel, facing south. This was right after we got back from se
 I had to take a bulb exposure to achieve the desired effect, but we hadn't brought a tripod or shutter release cable. I
 ended up standing on the hotel bed, using the ironing board as a makeshift "tripod". I'm actually amazed this came out
 at all.
-

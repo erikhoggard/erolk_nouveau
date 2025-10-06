@@ -1,7 +1,7 @@
 baseURL = '/'
 relativeURLs = true
 languageCode = 'en-us'
-title = 'Nothing Town'
+title = 'nothing town'
 theme = 'erolk-nouveau'
 
 [params]
