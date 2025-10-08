@@ -3,6 +3,7 @@ title = "Spinner"
 date = '2021-06-06'
 image = "photos/spinner.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2021", "digital", "indoors"]
 draft = false 
 +++
 

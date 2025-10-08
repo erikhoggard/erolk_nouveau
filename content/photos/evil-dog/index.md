@@ -3,6 +3,7 @@ title = "Evil Dog Statue"
 date = '2025-06-03'
 image = "photos/evil-dog.jpg"
 medium = "Kodak Gold 200, 35mm"
+tags = ["2025", "film", "blurry", "indoors", "evil", "Vegas"]
 draft = false 
 +++
 

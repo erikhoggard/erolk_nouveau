@@ -3,6 +3,7 @@ title = "Marine City"
 date = '2025-06-15T15:00:00-00:00'
 image = "photos/marine-city.jpg"
 medium = "Kodak Gold 200, 35mm"
+tags = ["2025", "film", "street"]
 draft = false
 +++
 

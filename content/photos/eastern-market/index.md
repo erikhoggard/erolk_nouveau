@@ -3,6 +3,7 @@ title = "Eastern Market"
 date = 2025-06-21
 image = "photos/EasternMarket.jpg"
 medium = "Kodak Portra 400, 35mm"
+tags = ["2025", "film", "street", "Detroit"]
 draft = false
 +++
 

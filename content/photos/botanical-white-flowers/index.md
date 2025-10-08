@@ -3,6 +3,7 @@ title = "White Flowers"
 date = '2023-04-15'
 image = "photos/botanical-white-flowers.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2023", "digital", "green", "plants", "Ireland"]
 draft = false 
 +++
 

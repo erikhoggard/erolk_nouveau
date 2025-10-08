@@ -3,7 +3,7 @@ title = "St. Clair Power Plant"
 date = 2025-06-15
 image = "photos/SCPowerPlant.jpg"
 medium = "Kodak Gold 200, 35mm"
-tags = ["2025", "film", "purple", "industrial", ]
+tags = ["2025", "film", "purple", "industrial" ]
 draft = false 
 +++
 

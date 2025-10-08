@@ -3,6 +3,7 @@ title = "Tree Fall"
 date = '2020-05-30'
 image = "photos/tree-fall.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2020", "digital", "green"]
 draft = false 
 +++
 

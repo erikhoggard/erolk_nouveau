@@ -3,6 +3,7 @@ title = "Cliffs of Moher"
 date = '2023-04-17T15:00:00-00:00'
 image = "photos/cliffs-of-moher.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2023", "digital", "landscape", "Ireland"]
 draft = false 
 +++
 

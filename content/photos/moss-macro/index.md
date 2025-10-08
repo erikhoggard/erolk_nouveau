@@ -3,6 +3,7 @@ title = "Moss Macro"
 date = '2020-06-07'
 image = "photos/moss-macro.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2020", "digital", "green", "macro"]
 draft = false 
 +++
 

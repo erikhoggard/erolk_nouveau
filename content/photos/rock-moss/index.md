@@ -3,6 +3,7 @@ title = "Moss (Rock)"
 date = '2020-08-09'
 image = "photos/rock-moss.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2020", "digital", "green", "dark"]
 draft = false 
 +++
 

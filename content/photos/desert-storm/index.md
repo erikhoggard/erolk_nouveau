@@ -3,6 +3,7 @@ title = "Desert Storm"
 date = '2025-06-08T15:00:00-00:00'
 image = "photos/desert-storm.jpg"
 medium = "Kodak Gold 200, 35mm"
+tags = ["2025", "film", "landscape", "desert", "Vegas"]
 draft = false 
 +++
 

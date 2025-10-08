@@ -3,6 +3,7 @@ title = "Trinity College Library"
 date = '2023-04-13'
 image = "photos/trinity-college-library-2.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2023", "digital", "indoors", "Ireland"]
 draft = false 
 +++
 

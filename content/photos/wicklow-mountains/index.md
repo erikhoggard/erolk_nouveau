@@ -3,6 +3,7 @@ title = "Wicklow Mountains"
 date = '2023-04-18'
 image = "photos/wicklow-mountains.jpg"
 medium = "Digital - Fujifilm X-T30"
+tags = ["2023", "film", "landscape", "Ireland"]
 draft = false 
 +++
 

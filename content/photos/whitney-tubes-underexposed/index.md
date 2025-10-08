@@ -3,6 +3,7 @@ title = "Whitney by some Tubes"
 date = '2025-05-13'
 image = "photos/whitney-tubes-underexposed.jpg"
 medium = "Kodak Gold 200, 35mm"
+tags = ["2025", "film", "dark", "industrial"]
 draft = false
 +++
 
