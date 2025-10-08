@@ -25,6 +25,18 @@ def ensure_dir_exists(directory):
         print(f"Local directory '{directory}' not found. Creating it.")
         os.makedirs(directory)
 
+def standardize_image_extensions(directory):
+    """Renames image files with uppercase extensions to lowercase."""
+    print(f"\nStandardizing image extensions in '{directory}'...")
+    for root, _, files in os.walk(directory):
+        for filename in files:
+            if filename.lower().endswith(('.jpg', '.jpeg')) and not filename.endswith(('.jpg', '.jpeg')):
+                old_path = os.path.join(root, filename)
+                new_path = os.path.join(root, os.path.splitext(filename)[0] + os.path.splitext(filename)[1].lower())
+                print(f"Renaming: {old_path} -> {new_path}")
+                os.rename(old_path, new_path)
+
+
 if __name__ == "__main__":
     print("--- Starting Smart Sync ---")
 
@@ -33,10 +45,17 @@ if __name__ == "__main__":
     ensure_dir_exists(AUDIO_DIR)
 
     print("\nStep 1: Syncing Photos...")
+    # Pull remote changes first
     photo_pull_command = ["aws", "s3", "sync", f"s3://{PHOTO_BUCKET}", PHOTO_DIR]
     run_command(photo_pull_command)
+
+    # Standardize extensions of local files (both new and pulled)
+    standardize_image_extensions(PHOTO_DIR)
+
+    # Push all changes back, ensuring consistent naming
     photo_push_command = ["aws", "s3", "sync", PHOTO_DIR, f"s3://{PHOTO_BUCKET}"]
     run_command(photo_push_command)
+
 
     print("\nStep 2: Syncing Audio...")
     audio_pull_command = ["aws", "s3", "sync", f"s3://{AUDIO_BUCKET}", AUDIO_DIR]

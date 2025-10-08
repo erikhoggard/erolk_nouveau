@@ -42,6 +42,11 @@ jobs:
           aws s3 sync s3://${{ secrets.AWS_S3_PHOTOS_BUCKET }} assets/photos
           aws s3 sync s3://${{ secrets.AWS_S3_AUDIO_BUCKET }} assets/audio
 
+      - name: Standardize image extensions
+        run: |
+          find assets/photos -depth -name "*.JPG" -exec sh -c 'mv "$1" "${1%.JPG}.jpg"' _ {} \;
+          find assets/photos -depth -name "*.JPEG" -exec sh -c 'mv "$1" "${1%.JPEG}.jpg"' _ {} \;
+
       - name: Build
         run: hugo --minify
 
@@ -49,4 +54,4 @@ jobs:
         run: aws s3 sync ./public s3://${{ secrets.AWS_S3_BUCKET }} --delete
 
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_CLOUDFONT_DISTRIBUTION_ID }} --paths "/*"
