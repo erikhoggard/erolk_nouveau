@@ -3,7 +3,7 @@ title = "Nathan, Rock Walker"
 date = '2025-06-08'
 image = "photos/nathan-rock-walker.jpg"
 medium = "Kodak Gold 200, 35mm"
-tags = ["2025", "film", "desert", "Vegas"]
+tags = ["2025", "film", "desert", "landscape", "Vegas"]
 draft = false
 +++
 

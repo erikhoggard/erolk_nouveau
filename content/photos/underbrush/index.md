@@ -3,7 +3,7 @@ title = "Underbrush"
 date = '2020-02-14'
 image = "photos/underbrush.jpg"
 medium = "Digital - Fujifilm X-T30"
-tags = ["2020", "digital", "green", "indoors"]
+tags = ["2020", "digital", "green", "indoors", "plants"]
 draft = false 
 +++
 
